@@ -515,10 +515,10 @@ where
 		} = import_block;
 
 		if !intermediates.is_empty() {
-			return Err(Error::IncompletePipeline)
+			return Err(Error::IncompletePipelineIntermediateHandling)
 		}
 
-		let fork_choice = fork_choice.ok_or(Error::IncompletePipeline)?;
+		let fork_choice = fork_choice.ok_or(Error::IncompletePipelineForkChoice)?;
 
 		let import_headers = if post_digests.is_empty() {
 			PrePostHeader::Same(header)

@@ -210,7 +210,7 @@ pub struct BlockImportParams<Block: BlockT, Transaction> {
 	/// `None` indicates that the current verifier or importer cannot yet
 	/// determine the fork choice value, and it expects subsequent importer
 	/// to modify it. If `None` is passed all the way down to bottom block
-	/// importer, the import fails with an `IncompletePipeline` error.
+	/// importer, the import fails with an `IncompletePipelineForkChoice` error.
 	pub fork_choice: Option<ForkChoiceStrategy>,
 	/// Re-validate existing block.
 	pub import_existing: bool,

@@ -144,8 +144,11 @@ pub enum Error {
 	#[error("Calculated state root does not match.")]
 	InvalidStateRoot,
 
-	#[error("Incomplete block import pipeline.")]
-	IncompletePipeline,
+	#[error("Incomplete block import pipeline (fork choice not setup).")]
+	IncompletePipelineForkChoice,
+
+	#[error("Incomplete block import pipeline (intermediate blocks exist).")]
+	IncompletePipelineIntermediateHandling,
 
 	#[error("Transaction pool not ready for block production.")]
 	TransactionPoolNotReady,
